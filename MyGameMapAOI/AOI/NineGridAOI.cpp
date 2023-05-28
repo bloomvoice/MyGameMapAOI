@@ -20,6 +20,10 @@ void CNineGridAOI::EventNotify(const std::vector<Creature>& oCreatures, eEventTy
 
 void CNineGridAOI::BroadcastEvent(Creature & oCreature, const std::vector<MapCommon::StCell>& oCells, eEventType eEvent)
 {
+	if (oCells.empty())
+	{
+		return;
+	}
 	switch (eEvent)
 	{
 	case eEventType::InvalidEvent:
